@@ -1,0 +1,124 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Voxel51
+providerId: voxel51
+created: '2026-06-21'
+modified: '2026-06-21'
+reconciled: false
+tags:
+- AI
+- Computer Vision
+- Datasets
+- Machine Learning
+- Python SDK
+- Plans
+description: >-
+  FiftyOne open source is free and licensed under Apache-2.0, installed via pip
+  and run locally with no metered API. FiftyOne Enterprise (formerly Teams) is
+  sold sales-led across Team, Growth, and Custom tiers, sized by user seats,
+  VPUs (visual processing units), and monthly compute hours, with "Contact
+  sales" pricing rather than published list prices. Specific dollar figures are
+  not published and are not reconciled in this artifact.
+notes: >-
+  Open source is free (Apache-2.0). Enterprise tier capacities below
+  (seats / VPUs / compute hours) are as advertised on the pricing page and may
+  change; verify with Voxel51 sales during reconciliation. No public per-unit
+  list prices are published for Enterprise.
+sources:
+- https://voxel51.com/pricing
+- https://github.com/voxel51/fiftyone
+- https://docs.voxel51.com/enterprise/index.html
+plans:
+- id: voxel51-open-source
+  name: FiftyOne Open Source
+  type: free
+  description: >-
+    Free, Apache-2.0 licensed FiftyOne Python SDK and App. Installed via pip
+    and run locally; no remote metered API, no seat charges.
+  entries:
+  - label: FiftyOne Open Source
+    name: open_source
+    type: free
+    metric: license
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: $0 (Apache-2.0)
+    userMultiplied: false
+  elements:
+  - name: FiftyOne Python SDK
+  - name: FiftyOne App
+  - name: Plugins & Operators
+- id: voxel51-team
+  name: Team
+  type: enterprise
+  description: >-
+    Entry FiftyOne Enterprise tier to streamline a team's visual AI
+    development. Advertised at 8 user seats, 4 VPUs, and 2,800 compute
+    hours/month. Sales-led pricing.
+  entries:
+  - label: Team Tier
+    name: team
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: 8 user seats
+  - name: 4 VPUs
+  - name: 2,800 compute hours/month
+  - name: Management SDK & API connection
+- id: voxel51-growth
+  name: Growth
+  type: enterprise
+  description: >-
+    FiftyOne Enterprise tier to scale a visual AI stack across projects.
+    Advertised at 25 user seats, 20 VPUs, and 14,000 compute hours/month.
+    Sales-led pricing.
+  entries:
+  - label: Growth Tier
+    name: growth
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: 25 user seats
+  - name: 20 VPUs
+  - name: 14,000 compute hours/month
+  - name: Management SDK & API connection
+- id: voxel51-custom
+  name: Custom
+  type: enterprise
+  description: >-
+    Top FiftyOne Enterprise tier for getting visual AI into production with
+    unlimited seats, VPUs, and deployments. Negotiated, sales-led pricing.
+  entries:
+  - label: Custom Agreement
+    name: custom
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: year
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: Unlimited seats
+  - name: Unlimited VPUs
+  - name: Custom deployments
+  - name: Dedicated support
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

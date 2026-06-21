@@ -1,0 +1,8 @@
+{
+  "info": {
+    "name": "Voxel51 FiftyOne",
+    "description": "FiftyOne by Voxel51 is delivered primarily as an open-source Python SDK (Apache-2.0), not as a broad public REST API. Datasets, Samples, Views, evaluations, and the FiftyOne App are accessed through the Python SDK rather than HTTP requests. FiftyOne Enterprise adds the fiftyone.management Python module over an authenticated API connection (FIFTYONE_API_URI + FIFTYONE_API_KEY), which is an internal GraphQL/orchestration surface consumed by the SDK; no general-purpose public REST contract is published, so this collection contains no fabricated HTTP endpoints. See https://docs.voxel51.com for the SDK reference.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": []
+}

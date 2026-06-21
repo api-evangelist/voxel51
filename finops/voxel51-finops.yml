@@ -1,0 +1,99 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Voxel51
+providerId: voxel51
+created: '2026-06-21'
+modified: '2026-06-21'
+reconciled: false
+tags:
+- AI
+- Computer Vision
+- Datasets
+- Machine Learning
+- Python SDK
+- FinOps
+- Cost Management
+- FOCUS
+description: >-
+  FinOps view of Voxel51 / FiftyOne spend. FiftyOne open source is free
+  (Apache-2.0) and runs on the customer's own infrastructure, so direct cost is
+  the underlying compute, storage, and database (e.g., MongoDB) the team
+  operates. FiftyOne Enterprise is a sales-led subscription priced by user
+  seats, VPUs, and monthly compute hours across Team / Growth / Custom tiers,
+  with negotiated terms rather than published per-token rates.
+notes: >-
+  Open-source costs are indirect (self-hosted compute/storage). Enterprise
+  costs are contracted subscription commitments; no public unit rates are
+  published. Verify metering and entitlements with Voxel51 during
+  reconciliation.
+sources:
+- https://voxel51.com/pricing
+- https://docs.voxel51.com/enterprise/index.html
+- https://focus.finops.org/focus-specification/v1-3/
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Voxel51
+serviceCategory: AI and Machine Learning
+billingModel:
+  pricingCategory: Subscription
+  billingFrequency: Annual
+  billingCurrency: USD
+  chargeCategories:
+  - Purchase
+  - Usage
+  - Adjustment
+focusColumns:
+  ServiceName: FiftyOne Enterprise
+  ServiceCategory: AI and Machine Learning
+  ProviderName: Voxel51
+  PublisherName: Voxel51
+  InvoiceIssuerName: Voxel51
+  BillingCurrency: USD
+  ChargeCategory: Purchase
+  PricingCategory: Subscription
+meters:
+- name: user_seats
+  description: Licensed FiftyOne Enterprise user seats per contracted tier.
+  unit: seats
+  aggregation: max
+  dimensions:
+  - account
+  - tier
+- name: vpus
+  description: Visual processing units (VPUs) provisioned for the Enterprise deployment.
+  unit: vpus
+  aggregation: max
+  dimensions:
+  - account
+  - tier
+- name: compute_hours
+  description: Monthly compute hours consumed by Enterprise workloads against the tier entitlement.
+  unit: hours
+  aggregation: sum
+  dimensions:
+  - account
+  - tier
+- name: self_hosted_infrastructure
+  description: Underlying compute, storage, and database cost for self-operated open-source FiftyOne (indirect, billed by the cloud/infra provider, not Voxel51).
+  unit: usd
+  aggregation: sum
+  dimensions:
+  - account
+  - resource
+principles:
+- name: Visibility
+  description: Separate free open-source self-hosting cost (cloud compute/storage/MongoDB) from the Voxel51 Enterprise subscription.
+- name: Allocation
+  description: Map Enterprise seats, VPUs, and compute hours to teams/projects; tag self-hosted infra by workload.
+- name: Optimization
+  description: Use free open-source FiftyOne where Enterprise governance is not required; right-size VPUs and compute-hour entitlements to actual usage.
+- name: Accountability
+  description: Review seat utilization and compute-hour burn against the contracted tier each renewal cycle.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

@@ -1,0 +1,64 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Voxel51
+providerId: voxel51
+created: '2026-06-21'
+modified: '2026-06-21'
+reconciled: false
+tags:
+- AI
+- Computer Vision
+- Datasets
+- Machine Learning
+- Python SDK
+- Rate Limiting
+- Quotas
+description: >-
+  FiftyOne's primary interface is a local, open-source Python SDK, so there is
+  no public per-request rate limit on the open-source surface - throughput is
+  bounded by the user's own hardware and the backing MongoDB/storage. FiftyOne
+  Enterprise capacity is governed by contracted entitlements (user seats, VPUs,
+  and monthly compute hours) rather than published RPM/TPM API throttles, and
+  the authenticated API connection is sized by the customer's deployment. No
+  public numeric rate limits are documented; values are not reconciled here.
+notes: >-
+  Open-source FiftyOne has no remote API and therefore no provider rate limit.
+  Enterprise limits are effectively the contracted seat / VPU / compute-hour
+  entitlements plus any deployment-level capacity; confirm with Voxel51 during
+  reconciliation.
+sources:
+- https://docs.voxel51.com/
+- https://docs.voxel51.com/enterprise/api_connection.html
+- https://voxel51.com/pricing
+responseCodes:
+  throttled: 429
+limits:
+- name: Open Source SDK
+  scope: local
+  metric: requests
+  limit: not applicable
+  notes: Local Python library; throughput bound by user hardware and backing database, not a provider quota.
+- name: Enterprise User Seats
+  scope: account
+  metric: seats
+  limit: see contract
+  notes: Entitled seats per tier (e.g., 8 Team / 25 Growth / unlimited Custom).
+- name: Enterprise VPUs
+  scope: account
+  metric: vpus
+  limit: see contract
+  notes: Visual processing units provisioned per tier.
+- name: Enterprise Compute Hours
+  scope: account
+  metric: compute_hours
+  limit: see contract
+  notes: Monthly compute-hour entitlement per tier; not a per-minute API throttle.
+policies:
+- name: Entitlement-Based Capacity
+  description: Enterprise usage is governed by contracted seats, VPUs, and compute hours rather than published API rate limits.
+- name: Backoff Strategy
+  description: SDK clients hitting the Enterprise API connection should implement retries with exponential backoff and honor Retry-After if returned.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

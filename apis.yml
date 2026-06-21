@@ -1,0 +1,113 @@
+aid: voxel51
+url: https://raw.githubusercontent.com/api-evangelist/voxel51/refs/heads/main/apis.yml
+name: Voxel51
+kind: company
+description: Voxel51 builds FiftyOne, the open-source toolkit for building high-quality
+  computer-vision and multimodal datasets and models. FiftyOne's primary interface
+  is a Python SDK (datasets, samples, views, and the FiftyOne App) rather than a broad
+  public REST API. FiftyOne Enterprise adds a Management SDK and an authenticated API
+  connection that lets the SDK operate over the network instead of a direct database
+  connection.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- AI
+- Computer Vision
+- Datasets
+- Machine Learning
+- Python SDK
+created: '2026-06-21'
+modified: '2026-06-21'
+specificationVersion: '0.19'
+apis:
+- aid: voxel51:fiftyone-sdk-python
+  name: FiftyOne SDK (Python)
+  tags:
+  - Python SDK
+  - Datasets
+  - Computer Vision
+  - Open Source
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.voxel51.com/api/fiftyone.html
+  baseURL: ''
+  properties:
+  - url: https://docs.voxel51.com/
+    type: Documentation
+  - url: https://docs.voxel51.com/api/fiftyone.html
+    type: APIReference
+  - url: openapi/voxel51-openapi.yml
+    type: OpenAPI
+  - url: https://github.com/voxel51/fiftyone
+    type: GitHub
+  description: The open-source FiftyOne Python SDK is the primary interface for building
+    and curating visual AI datasets - creating Datasets and Samples, slicing data with
+    Views and aggregations, computing embeddings and similarity, running evaluations,
+    and launching the interactive FiftyOne App. Distributed via pip (Apache-2.0); it
+    is a Python library, not a remote REST API.
+- aid: voxel51:fiftyone-enterprise-management-sdk
+  name: FiftyOne Enterprise Management SDK / API
+  tags:
+  - Enterprise
+  - Management SDK
+  - API Connection
+  - Administration
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.voxel51.com/enterprise/management_sdk.html
+  baseURL: ''
+  properties:
+  - url: https://docs.voxel51.com/enterprise/management_sdk.html
+    type: Documentation
+  - url: https://docs.voxel51.com/enterprise/api_connection.html
+    type: APIReference
+  - url: openapi/voxel51-openapi.yml
+    type: OpenAPI
+  - url: https://github.com/voxel51/fiftyone
+    type: GitHub
+  description: FiftyOne Enterprise (formerly Teams) adds the fiftyone.management Python
+    module for administering users, service accounts, API keys, dataset permissions,
+    user groups, and cloud credentials. It operates over an authenticated API connection
+    (FIFTYONE_API_URI + FIFTYONE_API_KEY) so SDK calls run against the central FiftyOne
+    Enterprise API rather than a direct MongoDB connection. The wire protocol is an
+    internal GraphQL/orchestration surface consumed by the SDK; Voxel51 does not publish
+    a general-purpose public REST API contract.
+- aid: voxel51:fiftyone-plugins-operators
+  name: FiftyOne Plugins & Operators
+  tags:
+  - Plugins
+  - Operators
+  - Extensibility
+  - Python SDK
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://docs.voxel51.com/plugins/index.html
+  baseURL: ''
+  properties:
+  - url: https://docs.voxel51.com/plugins/index.html
+    type: Documentation
+  - url: https://docs.voxel51.com/plugins/developing_plugins.html
+    type: APIReference
+  - url: openapi/voxel51-openapi.yml
+    type: OpenAPI
+  - url: https://github.com/voxel51/fiftyone-plugins
+    type: GitHub
+  description: The plugin and operator framework extends FiftyOne with custom Python
+    (and JavaScript/React) functionality - new App panels, operators, and integrations
+    that run inside the FiftyOne App and SDK. Plugins are authored against the FiftyOne
+    Python/JS APIs and registered with the local or Enterprise deployment; they are
+    not exposed as a standalone public HTTP API.
+common:
+- type: GitHubOrganization
+  url: https://github.com/voxel51
+- type: LinkedIn
+  url: https://www.linkedin.com/company/voxel51
+- type: Website
+  url: https://voxel51.com
+- type: Documentation
+  url: https://docs.voxel51.com
+- type: Plans
+  url: plans/voxel51-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/voxel51-rate-limits.yml
+- type: FinOps
+  url: finops/voxel51-finops.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

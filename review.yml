@@ -1,0 +1,85 @@
+aid: voxel51
+name: Voxel51
+review:
+  question: Does Voxel51 / FiftyOne expose a documented public REST or WebSocket API?
+  answer: false
+  date: '2026-06-21'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was created. FiftyOne is delivered as a local
+    open-source Python SDK and App; there is no documented public streaming
+    (SSE/WebSocket) API surface to model. FiftyOne Enterprise uses WebSocket
+    transport internally between the SDK/App and the teams-api service for
+    long-running operations, but this is an internal deployment detail, not a
+    documented public event API, so it was not modeled as AsyncAPI.
+findings:
+  summary: |
+    Voxel51's FiftyOne is SDK-first. The primary interface is the open-source
+    FiftyOne Python SDK (Apache-2.0), installed via pip, which builds and
+    curates Datasets, Samples, and Views and launches the local FiftyOne App.
+    There is no broad public REST API for open-source FiftyOne.
+
+    FiftyOne Enterprise (formerly Teams) adds the fiftyone.management Python
+    module and an authenticated API connection: the SDK is configured with
+    FIFTYONE_API_URI and FIFTYONE_API_KEY so calls run against the central
+    FiftyOne Enterprise API instead of a direct MongoDB connection. That API
+    is an internal GraphQL/orchestration surface (the deployment exposes a
+    teams-api service with routes such as /graphql/v1, /health, /file, and
+    /cas, fronted by WebSocket-capable ingress) that is consumed by the
+    FiftyOne SDK and App. Voxel51 documents how to configure and connect the
+    SDK to it, but does not publish a general-purpose public REST contract or
+    OpenAPI spec for third-party direct HTTP integration. Accordingly the
+    OpenAPI artifact in this repo carries an empty paths object and no REST
+    endpoints were fabricated.
+  interface:
+    primary: Python SDK (open source, Apache-2.0)
+    enterprise: Management SDK (fiftyone.management) over an authenticated API connection
+  transports:
+    - protocol: Python SDK
+      scheme: library
+      note: Open-source FiftyOne is a local Python library plus the FiftyOne App; not a remote API.
+      documented: true
+    - protocol: Enterprise API connection
+      scheme: https
+      note: SDK connects via FIFTYONE_API_URI + FIFTYONE_API_KEY to a deployment-specific FiftyOne Enterprise API (internal GraphQL/orchestration surface). Base URL is set per deployment.
+      documented: true
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: Enterprise teams-api uses WebSocket transport internally for long-running operations; not exposed as a documented public WebSocket API.
+    - protocol: REST
+      scheme: https
+      documented: false
+      note: No general-purpose public REST API or OpenAPI contract is published for FiftyOne open source or Enterprise.
+  authentication:
+    - method: API key (Enterprise)
+      note: Per-user FiftyOne Enterprise API keys generated in the App (Settings > API keys) or via fiftyone.management.generate_api_key(); enforce the user's roles and dataset permissions.
+sources:
+  - url: https://docs.voxel51.com/
+    type: Documentation
+    note: FiftyOne SDK and App documentation; primary interface is the Python SDK.
+  - url: https://docs.voxel51.com/api/fiftyone.html
+    type: APIReference
+    note: Python SDK API reference (fiftyone module).
+  - url: https://docs.voxel51.com/enterprise/management_sdk.html
+    type: Documentation
+    note: fiftyone.management Python module for Enterprise administration.
+  - url: https://docs.voxel51.com/enterprise/api_connection.html
+    type: Documentation
+    note: Authenticated API connection via FIFTYONE_API_URI and FIFTYONE_API_KEY; SDK over the network instead of direct MongoDB.
+  - url: https://github.com/voxel51/fiftyone
+    type: GitHub
+    note: Open-source FiftyOne repository (Apache-2.0).
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    Documented the SDK-first interface accurately across apis.yml, the OpenAPI
+    artifact (empty paths with an accurate SDK/Enterprise-API description), and
+    the plans/rate-limits/finops artifacts. No public REST endpoints were
+    fabricated and no AsyncAPI was authored because no documented public
+    streaming API exists.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
