@@ -1,0 +1,17 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/voxel51-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: apiKey
+  type: apiKey
+  in: header
+  parameter: X-API-Key
+  description: FiftyOne Enterprise API key. Used by the SDK over the authenticated API connection
+    (FIFTYONE_API_KEY). Keys are per-user and enforce that user's roles and dataset permissions.
+  sources:
+  - openapi/voxel51-openapi.yml

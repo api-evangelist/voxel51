@@ -94,6 +94,10 @@ apis:
     Python/JS APIs and registered with the local or Enterprise deployment; they are
     not exposed as a standalone public HTTP API.
 common:
+- type: DomainSecurity
+  url: security/voxel51-domain-security.yml
+- type: Authentication
+  url: authentication/voxel51-authentication.yml
 - type: GitHubOrganization
   url: https://github.com/voxel51
 - type: LinkedIn
@@ -108,6 +112,8 @@ common:
   url: rate-limits/voxel51-rate-limits.yml
 - type: FinOps
   url: finops/voxel51-finops.yml
+- url: https://voxel51.com/blog
+  type: Blog
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
