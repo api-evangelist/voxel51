@@ -8,7 +8,20 @@ description: Voxel51 builds FiftyOne, the open-source toolkit for building high-
   public REST API. FiftyOne Enterprise adds a Management SDK and an authenticated API
   connection that lets the SDK operate over the network instead of a direct database
   connection.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/voxel51.png
 tags:
 - AI
 - Computer Vision
