@@ -1,0 +1,53 @@
+openapi: 3.0.1
+info:
+  title: Voxel51 FiftyOne API
+  description: >-
+    FiftyOne by Voxel51 is delivered primarily as an open-source Python SDK
+    (Apache-2.0), not as a broad public REST API. The SDK creates and curates
+    Datasets, Samples, and Views, computes embeddings and evaluations, and
+    launches the interactive FiftyOne App locally.
+
+
+    FiftyOne Enterprise (formerly Teams) adds the fiftyone.management Python
+    module and an authenticated API connection: SDK clients set
+    FIFTYONE_API_URI and FIFTYONE_API_KEY so calls run against the central
+    FiftyOne Enterprise API instead of a direct MongoDB connection. That API is
+    an internal GraphQL/orchestration surface consumed by the FiftyOne SDK and
+    App; Voxel51 does not publish a general-purpose public REST contract, so no
+    REST paths are modeled here. This document intentionally exposes an empty
+    `paths` object to accurately represent the SDK-first interface rather than
+    fabricating endpoints.
+
+
+    Authentication for the Enterprise API connection is via per-user API keys
+    (generated in the App under Settings > API keys, or via
+    fiftyone.management.generate_api_key()); all actions are authorized as the
+    user the key belongs to, enforcing roles and dataset permissions.
+  termsOfService: https://voxel51.com/terms-of-service/
+  contact:
+    name: Voxel51 Support
+    url: https://voxel51.com/contact/
+  license:
+    name: Apache-2.0 (FiftyOne open source)
+    url: https://github.com/voxel51/fiftyone/blob/develop/LICENSE
+  version: '1.0'
+servers:
+  - url: https://docs.voxel51.com
+    description: >-
+      Documentation host. The FiftyOne open-source SDK has no remote server;
+      the FiftyOne Enterprise API base URL is deployment-specific and supplied
+      to the SDK via FIFTYONE_API_URI by a deployment administrator.
+externalDocs:
+  description: FiftyOne SDK API reference and Enterprise documentation
+  url: https://docs.voxel51.com/api/fiftyone.html
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: >-
+        FiftyOne Enterprise API key. Used by the SDK over the authenticated API
+        connection (FIFTYONE_API_KEY). Keys are per-user and enforce that
+        user's roles and dataset permissions.
+paths: {}

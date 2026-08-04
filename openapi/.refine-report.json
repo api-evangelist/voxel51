@@ -1,0 +1,14 @@
+{
+  "provider": "voxel51",
+  "sources": [
+    "voxel51-openapi.yml"
+  ],
+  "outputs": [],
+  "archived": [
+    "archived voxel51-openapi.yml"
+  ],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
