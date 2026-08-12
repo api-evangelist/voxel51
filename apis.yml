@@ -47,7 +47,7 @@ apis:
     type: Documentation
   - url: https://docs.voxel51.com/api/fiftyone.html
     type: APIReference
-  - url: openapi/voxel51-openapi.yml
+  - url: openapi/_original/voxel51-openapi.yml
     type: OpenAPI
   - url: https://github.com/voxel51/fiftyone
     type: GitHub
@@ -71,7 +71,7 @@ apis:
     type: Documentation
   - url: https://docs.voxel51.com/enterprise/api_connection.html
     type: APIReference
-  - url: openapi/voxel51-openapi.yml
+  - url: openapi/_original/voxel51-openapi.yml
     type: OpenAPI
   - url: https://github.com/voxel51/fiftyone
     type: GitHub
@@ -97,7 +97,7 @@ apis:
     type: Documentation
   - url: https://docs.voxel51.com/plugins/developing_plugins.html
     type: APIReference
-  - url: openapi/voxel51-openapi.yml
+  - url: openapi/_original/voxel51-openapi.yml
     type: OpenAPI
   - url: https://github.com/voxel51/fiftyone-plugins
     type: GitHub
