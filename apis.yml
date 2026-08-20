@@ -23,6 +23,12 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/voxel51.png
 tags:
+- Artificial Intelligence
+- Computer-Vision
+- Datasets
+- Machine-Learning
+- Python SDK
+tags_raw:
 - AI
 - Computer Vision
 - Datasets
@@ -35,6 +41,11 @@ apis:
 - aid: voxel51:fiftyone-sdk-python
   name: FiftyOne SDK (Python)
   tags:
+  - Python SDK
+  - Datasets
+  - Computer-Vision
+  - Open-Source
+  tags_raw:
   - Python SDK
   - Datasets
   - Computer Vision
