@@ -108,6 +108,11 @@ apis:
   name: FiftyOne Plugins & Operators
   tags:
   - Plugins
+  - Operator
+  - Extensibility
+  - Python SDK
+  tags_raw:
+  - Plugins
   - Operators
   - Extensibility
   - Python SDK
