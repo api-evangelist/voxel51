@@ -1,0 +1,27 @@
+# Front Door AI Index — voxel51 — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: voxel51
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: voxel51.com
+  final_host: voxel51.com
+  ownership: own
+  owner: voxel51
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 16
+  host_score: 16
+  density: 32.52
+  words: 492
+  tiers:
+    agentic: 8
+    core: 8
+    model: 0
+  ambiguous: 0
+  top_terms:
+    AI: 8
+    embedding: 5
+    agentic: 3
