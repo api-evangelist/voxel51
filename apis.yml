@@ -10,14 +10,19 @@ description: Voxel51 builds FiftyOne, the open-source toolkit for building high-
   connection.
 deliveryModel:
   model: saas
-  open_source: false
+  license_evidence:
+    not_product:
+    - voxel51/fiftyone
+    - voxel51/fiftyone-plugins
+  open_source: unknown
   commercial: true
   callable_host: false
   label: Hosted service · you call their endpoint
-  confidence: medium
+  confidence: low
   source:
   - pricing
-  generated: '2026-08-28'
+  - repository-not-product
+  generated: '2026-09-25'
   method: derived
 accessModel:
   pricing: freemium
@@ -35,9 +40,9 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/voxel51.png
 tags:
 - Artificial Intelligence
-- Computer-Vision
+- Computer Vision
 - Datasets
-- Machine-Learning
+- Machine Learning
 - Python SDK
 tags_raw:
 - AI
@@ -45,6 +50,8 @@ tags_raw:
 - Datasets
 - Machine Learning
 - Python SDK
+- Computer-Vision
+- Machine-Learning
 created: '2026-06-21'
 modified: '2026-06-21'
 specificationVersion: '0.23'
@@ -54,13 +61,15 @@ apis:
   tags:
   - Python SDK
   - Datasets
-  - Computer-Vision
-  - Open-Source
+  - Computer Vision
+  - Open Source
   tags_raw:
   - Python SDK
   - Datasets
   - Computer Vision
   - Open Source
+  - Computer-Vision
+  - Open-Source
   image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://docs.voxel51.com/api/fiftyone.html
   baseURL: ''
