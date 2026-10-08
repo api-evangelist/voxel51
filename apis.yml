@@ -143,6 +143,8 @@ apis:
     Python/JS APIs and registered with the local or Enterprise deployment; they are
     not exposed as a standalone public HTTP API.
 common:
+- type: Pricing
+  url: https://voxel51.com/pricing
 - type: DomainSecurity
   url: security/voxel51-domain-security.yml
 - type: Authentication
