@@ -66,6 +66,35 @@ edges:
     detected: '2026-10-20'
   detected_by: sweep-agent-skills.py
   first_seen: '2026-10-20'
+- partner_name: Hugging Face (hugging-face-hub)
+  partner: hugging-face
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: hugging-face-hub
+  evidence: https://huggingface.co/Voxel51
+  mirror_of: hugging-face/integrations/hugging-face-integration-edges.yml
+  apps:
+  - Voxel51/mvtec-ad
+  - Voxel51/InsPLAD
+  - Voxel51/severstal_steel_defects
+  - Voxel51/American-Sign-Language-MNIST
+  - Voxel51/IndoorSceneRecognition
+  - Voxel51/GroundUI-18k
+  - Voxel51/dacl10k
+  - Voxel51/VisDrone2019-DET
+  - Voxel51/fc-clip
+  - Voxel51/openworld-sam
+  - Voxel51/2025-ai-timeline
+  listing_count: 3
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Hugging Face Hub datasets
+  badges:
+  - Verified publisher (Hugging Face verified organisation)
 generated: '2026-10-20'
 method: searched
 source:
@@ -77,3 +106,4 @@ checked:
 - https://officialskills.sh/sitemap.xml
 - https://skillsmp.com/sitemap.xml
 - https://www.skills.sh/sitemap.xml
+- hugging-face/integrations/hugging-face-integration-edges.yml
